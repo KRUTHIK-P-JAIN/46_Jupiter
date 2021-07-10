@@ -181,8 +181,8 @@ function showUser(str) {
 			 <form action="results_stable.php" method="POST">
 	<select name="events" onchange="showUser(this.value)">
   <option value="">Select a event type:</option>
-  <option value="ON STAGE">ON STAGE</option>
-  <option value="OFF STAGE">OFF STAGE</option>
+  
+  <option value="HACKATHON">HACKATHON</option>
   
   </select><br/><br/>
   <select id="events" name="events"><b>Events info will be listed here...</b></select><br /><br />
