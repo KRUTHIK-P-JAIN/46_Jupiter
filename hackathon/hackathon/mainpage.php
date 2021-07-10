@@ -49,7 +49,7 @@ height:px;
 
 body {
  background-image: url("img/bg.jpg");
- background-color: #cccccc;
+ 
 }
  #navbar {
   overflow: hidden;
@@ -79,6 +79,19 @@ body {
 .sticky + .content {
   padding-top: 60px;
 }
+ 
+hr.new {
+  border: 5px solid yellow;
+  border-radius: 5px;
+}
+#a {
+  border-radius: 100px 100px;
+  background-color: #f2f2f2;
+  padding: 0px 30px;
+}
+
+
+
 </style>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
@@ -131,10 +144,40 @@ body {
 <body>
 <h1 align="center"><b>HACKATHON 1.0<b></h1>
 
-						<BR></div>
+						<BR>
 
-
-                    
+<div id="a">
+<br><center><b>--: <U>PROBLEM STATEMENTS</U> :--</b><br></center><br>
+				<body>
+				</body>
+				<?php
+include("db_conection.php");
+ ?><html><center><?php
+   
+  $check_user="select * from prob ";
+  $run=mysqli_query($link,$check_user);
+  
+  
+  if(mysqli_num_rows($run)>0){ 
+$query2="select ps from prob where id='0'";
+		  $result2=mysqli_query($link,$query2);
+		  $data2=mysqli_fetch_assoc($result2);
+		  $code=$data2['ps'];		
+		$part_id=$code;
+		$msg2=" $part_id ";
+		echo "$msg2"; echo'<br>';
+		while($row=mysqli_fetch_array($result2))//while look to fetch the result and store in a array $row.
+        {
+			$part_id=$row[0];
+			echo $part_id; ?><html><br><?php
+  }}
+	else{
+		echo "Problem Statements will be revealed on 10-jul-21"; 
+  print ' at 10:30AM';
+  
+	}
+  ?></center><br></div><hr class="new">
+                 
 <div class="content">			
   <body>
 <div class="container">
@@ -194,8 +237,131 @@ body {
       <span class="sr-only">Next</span>
     </a>
   </div>
-</div></div>
-<div class='about'>					
+</div></div><!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.column {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+
+.card {
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: red;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: green;
+  text-align: center;
+  cursor: pointer;
+  width: 30%;
+}
+
+.button:hover {
+  background-color: grey;
+}
+#b {
+   border-radius: 30px 30px;
+  background-color: #F2F3F4 ;
+  padding: 20px 30px;
+}
+
+</style>
+</head>
+<body>
+
+<h2>Responsive "Meet The Team" Section</h2>
+<p>Resize the browser window to see the effect.</p>
+<br>
+<div id="b"><form action="ss.php" method="post">
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <img src="img/i.jpg" alt="Jane" style="width:100%">
+      <div class="container">
+        <h2><B>HACKORANK 1.0</B></h2>
+        <p class="title">GM INSTITUTE OF TECHNOLOGY</p>
+        <p>Problem Statement will be released on the day of Hackathon<br>
+		and team has to choose one and work on it for 48 hours.</p>
+        <p>hackorank@example.com</p>
+		<input type="hidden" name="pwd" value="hackathon1">
+        <p><input class="button" type="submit" name="hackathon" value="REGISTER" ><br><br></p>
+      </div>
+    </div>
+  </div>
+</form><form action="ss.php" method="post">
+  <div class="column">
+    <div class="card">
+      <img src="img/i.jpg" alt="Mike" style="width:100%">
+      <div class="container">
+        <h2><B>HACKATHON 2.0</B></h2>
+        <p class="title">JAIN INSTITUTE OF TECHNOLOGY</p>
+        <p>Problem Statement will be released on the day of Hackathon<br>
+		and team has to choose one and work on it for 36 hours.</p>
+        <p>hackathon@example.com</p>
+		<input type="hidden" name="pwd" value="hackathon2">
+        <p><input class="button" type="submit" name="hackathon2" value="REGISTER" ><br><br></p>
+      </div>
+    </div>
+  </div>
+  </form><form action="ss.php" method="post">
+  <div class="column">
+    <div class="card">
+      <img src="img/i.jpg" alt="John" style="width:100%">
+      <div class="container">
+        <h2><B>HACKERTEAM 3.O</B></h2>
+        <p class="title">HACKATHON ACADEMY</p>
+        <p>Problem Statement will be released on the day of Hackathon<br>
+		and team has to choose one and work on it for 20 hours.</p>
+        <p>hackerteam@example.com</p>
+		<input type="hidden" name="pwd" value="hackathon">
+        <p><input class="button" type="submit" name="hackathon1" value="REGISTER" ><br><br></p>
+      </div>
+    </div>
+  </div>
+</div>
+</div></form>
+</body>
+</html>
+
+<div class='about'>	<hr class="new">				
 <h1>NOTE: </h1>
 <h3>MAXIMUM 5 members in each team of the same college.</h3>
 <h3>Teams can build Web, Mobile or Desktop applications.</h3>
@@ -203,7 +369,8 @@ body {
 	and work on it for 48 hours. </h3>
 <h1>ENTRY FEE:</h1>
 <h3>250rs per Team </h3>
-<br></div>
+<br></div><hr class="new">
+<br><br>
 					
 					
        	<!-- jQuery -->
