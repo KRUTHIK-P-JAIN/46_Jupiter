@@ -31,7 +31,7 @@ li a {
 }
 
 li a:hover:not(.active) {
-  background-color: #111;
+  background-color:rgb(255,255,255);opacity:0.6; 
 }
 .about{
 height:px;
@@ -48,7 +48,7 @@ height:px;
   border-radius: 50px 20px;}
 
 body {
- background-image: url("img/bg.jpg");
+ background: linear-gradient(45deg, #FC466B, #3F5EFB);
  
 }
  #navbar {
@@ -91,8 +91,58 @@ hr.new {
 }
 
 
+.ml2 {
+  font-weight: 900;
+  font-size: 3.5em;
+}
 
+.ml2 .letter {
+  display: inline-block;
+  line-height: 1em;
+}
+.ml5 {
+  position: relative;
+  font-weight: 300;
+  font-size: 1.8em;
+  color: #402d2d;
+}
+
+.ml5 .text-wrapper {
+  position: relative;
+  display: inline-block;
+  padding-top: 0.1em;
+  padding-right: 0.05em;
+  padding-bottom: 0.15em;
+  line-height: 1em;
+}
+
+.ml5 .line {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  height: 3px;
+  width: 100%;
+  background-color: #402d2d;
+  transform-origin: 0.5 0;
+}
+
+.ml5 .ampersand {
+  font-family: Baskerville, serif;
+  font-style: italic;
+  font-weight: 400;
+  width: 1em;
+  margin-right: -0.1em;
+  margin-left: -0.1em;
+}
+
+.ml5 .letters {
+  display: inline-block;
+  opacity: 0;
+}
 </style>
+
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 
@@ -101,24 +151,13 @@ hr.new {
 	
 	<link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
 	
-	<!-- Animate.css -->
-	<link rel="stylesheet" href="css/animate.css">
-	<!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" href="css/icomoon.css">
-	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="css/bootstrap.css">
-	<!-- Flexslider  -->
-	<link rel="stylesheet" href="css/flexslider.css">
-	<!-- Flaticons  -->
-	<link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
 	<!-- Owl Carousel -->
 	<link rel="stylesheet" href="css/owl.carousel.min.css">
 	<link rel="stylesheet" href="css/owl.theme.default.min.css">
 	<!-- Theme style  -->
 	<link rel="stylesheet" href="css/style.css">
 
-	<!-- Modernizr JS -->
-	<script src="js/modernizr-2.6.2.min.js"></script>
+	
 	<!-- FOR IE9 below -->
 	<!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
@@ -142,17 +181,121 @@ hr.new {
   <li style="float:right"><a href="about.html">ABOUT</a></li></ul></div></div><br><br><br>
 </head>
 <body>
-<h1 align="center"><b>HACKATHON 1.0<b></h1>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<center>
+<h1 class="ml2">HACKATHON 1.0</h1></center>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+<script>// Wrap every letter in a span
+var textWrapper = document.querySelector('.ml2');
+textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+anime.timeline({loop: true})
+  .add({
+    targets: '.ml2 .letter',
+    scale: [4,1],
+    opacity: [0,1],
+    translateZ: 0,
+    easing: "easeOutExpo",
+    duration: 950,
+    delay: (el, i) => 70*i
+  }).add({
+    targets: '.ml2',
+    opacity: 0,
+    duration: 1000,
+    easing: "easeOutExpo",
+    delay: 1000
+  });
+  
+  
+  
+ 
+  </script>
+  
 						<BR>
 
 <div id="a">
-<br><center><b>--: <U>PROBLEM STATEMENTS</U> :--</b><br></center><br>
-				<body>
-				</body>
+<br><center>
+				<body><h1 class="ml5">
+  <span class="text-wrapper">
+    <span class="line line1"></span>
+    <span class="letters letters-left">-: Problem </span>
+    
+    <span class="letters letters-right">Statements :-</span>
+    <span class="line line2"></span>
+  </span>
+</h1>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+		<script> anime.timeline({loop: true})
+  .add({
+    targets: '.ml5 .line',
+    opacity: [0.5,1],
+    scaleX: [0, 1],
+    easing: "easeInOutExpo",
+    duration: 700
+  }).add({
+    targets: '.ml5 .line',
+    duration: 600,
+    easing: "easeOutExpo",
+    translateY: (el, i) => (-0.625 + 0.625*2*i) + "em"
+  }).add({
+    targets: '.ml5 .ampersand',
+    opacity: [0,1],
+    scaleY: [0.5, 1],
+    easing: "easeOutExpo",
+    duration: 600,
+    offset: '-=600'
+  }).add({
+    targets: '.ml5 .letters-left',
+    opacity: [0,1],
+    translateX: ["0.5em", 0],
+    easing: "easeOutExpo",
+    duration: 600,
+    offset: '-=300'
+  }).add({
+    targets: '.ml5 .letters-right',
+    opacity: [0,1],
+    translateX: ["-0.5em", 0],
+    easing: "easeOutExpo",
+    duration: 600,
+    offset: '-=600'
+  }).add({
+    targets: '.ml5',
+    opacity: 0,
+    duration: 1000,
+    easing: "easeOutExpo",
+    delay: 1000
+  });</script>		</body>
 				<?php
 include("db_conection.php");
- ?><html><center><?php
+ ?><html><center><b><?php
    
   $check_user="select * from prob ";
   $run=mysqli_query($link,$check_user);
@@ -176,7 +319,7 @@ $query2="select ps from prob where id='0'";
   print ' at 10:30AM';
   
 	}
-  ?></center><br></div><hr class="new">
+  ?></b></center><br></div><hr class="new">
                  
 <div class="content">			
   <body>
@@ -188,14 +331,14 @@ $query2="select ps from prob where id='0'";
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
       <li data-target="#myCarousel" data-slide-to="1"></li>
       <li data-target="#myCarousel" data-slide-to="2"></li>
-	  <li data-target="#myCarousel" data-slide-to="3"></li>
+	
     </ol>
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
 
       <div class="item active">
-        <img src="img/h.jpg" alt="Los Angeles" style="width:90%;">
+        <img src="img/a.jpg" alt="Los Angeles" style="width:100%;">
         <div class="carousel-caption">
           <h3>4</h3>
           <p>Hackathon is fun!!</p>
@@ -203,27 +346,15 @@ $query2="select ps from prob where id='0'";
       </div>
 
       <div class="item">
-        <img src="img/k.jpg" alt="Chicago" style="width:90%;">
+        <img src="img/b.jpg" alt="Chicago" style="width:100%;">
         <div class="carousel-caption">
           <h3>3</h3>
           <p>Hackwithin 48hrs</p>
         </div>
       </div>
     
-      <div class="item">
-        <img src="img/g.jpg" alt="New York" style="width:90%;">
-        <div class="carousel-caption">
-          <h3>2</h3>
-          <p>Hackothsav 2021!!</p>
-        </div>
-      </div>
-	 <div class="item">
-        <img src="img/i.jpg" alt="New York" style="width:90%;">
-        <div class="carousel-caption">
-          <h3>1</h3>
-          <p>Hackothsav 2021!!</p>
-        </div>
-      </div>
+      
+	 
   
     </div>
 
@@ -306,9 +437,9 @@ html {
 </style>
 </head>
 <body>
-
-<h2>Responsive "Meet The Team" Section</h2>
-<p>Resize the browser window to see the effect.</p>
+<div class="about">
+<h2>BE READY TO EXPLORE YOURSELF TO REACH HIGH</h2>
+<p>Teams can build Web, Mobile or Desktop applications...</p></div>
 <br>
 <div id="b"><form action="ss.php" method="post">
 <div class="row">
@@ -317,10 +448,10 @@ html {
       <img src="img/i.jpg" alt="Jane" style="width:100%">
       <div class="container">
         <h2><B>HACKORANK 1.0</B></h2>
-        <p class="title">GM INSTITUTE OF TECHNOLOGY</p>
+        <b><p class="title">GM INSTITUTE OF TECHNOLOGY</p>
         <p>Problem Statement will be released on the day of Hackathon<br>
 		and team has to choose one and work on it for 48 hours.</p>
-        <p>hackorank@example.com</p>
+        <p>hackorank@example.com</p></b>
 		<input type="hidden" name="pwd" value="hackathon1">
         <p><input class="button" type="submit" name="hackathon" value="REGISTER" ><br><br></p>
       </div>
@@ -332,10 +463,10 @@ html {
       <img src="img/i.jpg" alt="Mike" style="width:100%">
       <div class="container">
         <h2><B>HACKATHON 2.0</B></h2>
-        <p class="title">JAIN INSTITUTE OF TECHNOLOGY</p>
+        <b><p class="title">JAIN INSTITUTE OF TECHNOLOGY</p>
         <p>Problem Statement will be released on the day of Hackathon<br>
 		and team has to choose one and work on it for 36 hours.</p>
-        <p>hackathon@example.com</p>
+        <p>hackathon@example.com</p></b>
 		<input type="hidden" name="pwd" value="hackathon2">
         <p><input class="button" type="submit" name="hackathon2" value="REGISTER" ><br><br></p>
       </div>
@@ -347,10 +478,10 @@ html {
       <img src="img/i.jpg" alt="John" style="width:100%">
       <div class="container">
         <h2><B>HACKERTEAM 3.O</B></h2>
-        <p class="title">HACKATHON ACADEMY</p>
+       <b> <p class="title">HACKATHON ACADEMY</p>
         <p>Problem Statement will be released on the day of Hackathon<br>
 		and team has to choose one and work on it for 20 hours.</p>
-        <p>hackerteam@example.com</p>
+        <p>hackerteam@example.com</p></b>
 		<input type="hidden" name="pwd" value="hackathon">
         <p><input class="button" type="submit" name="hackathon1" value="REGISTER" ><br><br></p>
       </div>
