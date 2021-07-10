@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 09, 2021 at 02:56 PM
+-- Generation Time: Jul 10, 2021 at 06:20 AM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.11
 
@@ -45,7 +45,9 @@ CREATE TABLE `coordinator` (
 --
 
 INSERT INTO `coordinator` (`user_name`, `user_pass`, `category`, `events`, `name`, `usn`, `branch`, `sem`, `mobile`) VALUES
-('vinaybk@gmail', '123', 'admin', '', 'VINAY B K', '4GM17IS060', 'IS', '8', '8095531197');
+('vinaybk@gmail', '123', 'admin', '', 'VINAY B K', '4GM17IS060', 'IS', '8', '8095531197'),
+('k@gmail.com', '123', 'USER', 'BUSSINESS ORIENTED', 'kruthik p jain', '4GM18IS054', 'CS', '2', '8095531197'),
+('g@gmail.com', '123', 'USER', 'SOCIETAL IMPACT', 'GURURAJ', '4GM18IS057', 'MECH', '4', '8095531175');
 
 -- --------------------------------------------------------
 
@@ -99,7 +101,7 @@ CREATE TABLE `info` (
   `event_type` varchar(10) NOT NULL,
   `tname` varchar(20) NOT NULL,
   `name` varchar(30) NOT NULL,
-  `usn` varchar(10) NOT NULL,
+  `usn` varchar(100) NOT NULL,
   `branch` varchar(6) NOT NULL,
   `sem` int(1) NOT NULL,
   `mobile` varchar(10) NOT NULL,
@@ -108,6 +110,25 @@ CREATE TABLE `info` (
   `tid` varchar(30) NOT NULL,
   `place` varchar(10) NOT NULL DEFAULT 'NONE',
   `score` int(5) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `info`
+--
+
+INSERT INTO `info` (`part_id`, `events`, `event_type`, `tname`, `name`, `usn`, `branch`, `sem`, `mobile`, `email`, `msg`, `tid`, `place`, `score`) VALUES
+('BO-1', 'BUSSINESS ORIENTED', 'HACKATHON', 'Jupiter', 'kruthik p jain', 'Gm Institute of Technology,Davangere', 'IS', 6, '8095531197', 'kruthik@gmail.com', 'AAA\r\nAAA\r\nAAA', 'TRA0012637U00', 'NONE', 0),
+('SI-1', 'SOCIETAL IMPACT', 'HACKATHON', 'pluto', 'nagesh s h', 'jain institute of technology,davangere', 'CS', 6, '8095531175', 'n@gmail.com', 'GGGG\r\nTTTT\r\nHHH', 'TRA0012637U007', 'NONE', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `prob`
+--
+
+CREATE TABLE `prob` (
+  `id` int(11) DEFAULT 0,
+  `ps` varchar(1000) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
