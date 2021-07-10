@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 10, 2021 at 06:20 AM
+-- Generation Time: Jul 10, 2021 at 01:14 PM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.11
 
@@ -47,7 +47,7 @@ CREATE TABLE `coordinator` (
 INSERT INTO `coordinator` (`user_name`, `user_pass`, `category`, `events`, `name`, `usn`, `branch`, `sem`, `mobile`) VALUES
 ('vinaybk@gmail', '123', 'admin', '', 'VINAY B K', '4GM17IS060', 'IS', '8', '8095531197'),
 ('k@gmail.com', '123', 'USER', 'BUSSINESS ORIENTED', 'kruthik p jain', '4GM18IS054', 'CS', '2', '8095531197'),
-('g@gmail.com', '123', 'USER', 'SOCIETAL IMPACT', 'GURURAJ', '4GM18IS057', 'MECH', '4', '8095531175');
+('v@gmail.com', '111', 'USER', 'SOCIAL IMPACT', 'VINAY', '4GM17IS044', 'IS', '4', '9916152536');
 
 -- --------------------------------------------------------
 
@@ -67,7 +67,7 @@ CREATE TABLE `event_master` (
 
 INSERT INTO `event_master` (`event_type`, `events`, `code`) VALUES
 ('HACKATHON', 'BUSSINESS ORIENTED', 'BO'),
-('HACKATHON', 'SOCIETAL IMPACT', 'SI');
+('HACKATHON', 'SOCIAL IMPACT', 'SI');
 
 -- --------------------------------------------------------
 
@@ -117,8 +117,10 @@ CREATE TABLE `info` (
 --
 
 INSERT INTO `info` (`part_id`, `events`, `event_type`, `tname`, `name`, `usn`, `branch`, `sem`, `mobile`, `email`, `msg`, `tid`, `place`, `score`) VALUES
-('BO-1', 'BUSSINESS ORIENTED', 'HACKATHON', 'Jupiter', 'kruthik p jain', 'Gm Institute of Technology,Davangere', 'IS', 6, '8095531197', 'kruthik@gmail.com', 'AAA\r\nAAA\r\nAAA', 'TRA0012637U00', 'NONE', 0),
-('SI-1', 'SOCIETAL IMPACT', 'HACKATHON', 'pluto', 'nagesh s h', 'jain institute of technology,davangere', 'CS', 6, '8095531175', 'n@gmail.com', 'GGGG\r\nTTTT\r\nHHH', 'TRA0012637U007', 'NONE', 0);
+('BO-1', 'BUSSINESS ORIENTED', 'HACKATHON', 'Jupiter', 'kruthik p jain', 'Gm Institute of Technology,Davangere', 'IS', 6, '8095531197', 'kruthik@gmail.com', 'AAA\r\nAAA\r\nAAA', 'TRA0012637U00', 'SECOND', 250),
+('BO-2', 'BUSSINESS ORIENTED', 'HACKATHON', 'aaa', 'VINAY', 'gmit', 'IS', 6, '8095531197', 'v@gmai', 'aaaaa', 'tn886565', 'FIRST', 500),
+('SI-1', 'SOCIAL IMPACT', 'HACKATHON', 'aaa', 'ffff', 'gm in', 'IS', 6, '8095531197', 'vvvvvvvvv', 'vvv', 'tn886565', 'SECOND', 200),
+('SI-2', 'SOCIAL IMPACT', 'HACKATHON', 'K1', 'KIRAN', 'GMIT', 'CS', 6, '9916152536', 'KI@GMAIL', 'aaaaa\r\ndddd\r\nfggg', 'tn886565', 'FIRST', 300);
 
 -- --------------------------------------------------------
 
@@ -130,6 +132,66 @@ CREATE TABLE `prob` (
   `id` int(11) DEFAULT 0,
   `ps` varchar(1000) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `prob`
+--
+
+INSERT INTO `prob` (`id`, `ps`) VALUES
+(0, '***BUSSINESS ORIENTED***'),
+(0, '1)ABCD'),
+(0, '2)EFGH'),
+(0, 'aaaaaaaaaaaaa');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `results`
+--
+
+CREATE TABLE `results` (
+  `part_id` varchar(6) NOT NULL,
+  `team_name` varchar(30) NOT NULL,
+  `events` varchar(20) NOT NULL,
+  `event_type` varchar(10) NOT NULL,
+  `name` varchar(20) NOT NULL,
+  `usn` varchar(10) NOT NULL,
+  `branch` varchar(6) NOT NULL,
+  `place` varchar(6) NOT NULL,
+  `score` int(5) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `results`
+--
+
+INSERT INTO `results` (`part_id`, `team_name`, `events`, `event_type`, `name`, `usn`, `branch`, `place`, `score`) VALUES
+('BO-1', 'Jupiter', 'BUSSINESS ORIENTED', 'HACKATHON', 'kruthik p jain', 'Gm Institu', 'IS', 'SECOND', 250),
+('BO-2', 'aaa', 'BUSSINESS ORIENTED', 'HACKATHON', 'VINAY', 'gmit', 'IS', 'FIRST', 500),
+('SI-1', 'aaa', 'SOCIAL IMPACT', 'HACKATHON', 'ffff', 'gm in', 'IS', 'SECOND', 200),
+('SI-2', 'K1', 'SOCIAL IMPACT', 'HACKATHON', 'KIRAN', 'GMIT', 'CS', 'FIRST', 300);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `team_score`
+--
+
+CREATE TABLE `team_score` (
+  `team_id` varchar(20) NOT NULL,
+  `team_name` varchar(30) NOT NULL,
+  `score` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `team_score`
+--
+
+INSERT INTO `team_score` (`team_id`, `team_name`, `score`) VALUES
+('Jupiter', 'BO-1', '250'),
+('aaa', 'BO-2', '500'),
+('aaa', 'SI-1', '200'),
+('K1', 'SI-2', '300');
 
 --
 -- Indexes for dumped tables
