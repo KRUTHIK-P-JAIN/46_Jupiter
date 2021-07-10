@@ -367,7 +367,7 @@ $check_user="select * from info WHERE events='$events' and usn='$usn' and tid='$
 		 }	 
 		  else{
 	
-		  $message="Registration successful...!!! Your ID is : $part_id ...goto to bottom of the page for e-reciept";
+		  $message="Registration successful...!!! Your ID is : $part_id ";
 		  $msg="Registration successful...!!!";
 		  $msg11="TAKE A SCREENSHOT";
 		  $msg1="Transaction will be cross checked and conformation will be sent to Registered E-MAIL";
@@ -401,7 +401,10 @@ echo "$msg5";echo'<br>';
 echo "$msg6";echo'<br>';
 echo "$msg7";echo'<br>';
 echo "$msg8";echo'<br>';
-echo "$msg9"; }
+echo "$msg9";
+
+mail("$msg10",'Hackathon Registration Confirmed',"$msg\n$msg2\n$msg3\n$msg10\n$msg4\n$msg5\n$msg6\n$msg7\n$msg8\n$msg9",'From: vinaybk1799@gmail.com');
+}
       ?>
 	  <p></h2></div></center><br><?php
 		  }}else
