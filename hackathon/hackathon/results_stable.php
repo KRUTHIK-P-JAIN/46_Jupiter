@@ -162,7 +162,7 @@ tr:nth-child(even) {
   <li style="float:right"><a href="about.html">ABOUT</a></li></ul></div></div><br><br>
   </head>
 <body><!--<center><img src="img/111.jpg"></center><br>-->
-<h1 align="center">MALLIKA 20.0</h1>
+<h1 align="center"><B>HACKATHON 1.0</B></h1>
 
   <br>
   
@@ -172,11 +172,12 @@ tr:nth-child(even) {
 						<thead>
 							<tr><center>
 							<th><center>PARTICIPANT ID</center></th>
-							    <th><center>EVENTS</center></th>
-								<th><center>EVENTS TYPE</center></th>
-								<th><center>NAME</center></th>
-								<th><center>USN</center></th>
-								<th><center>BRANCH</center></th>
+							<th><center>TEAM NAME</center></th>
+							    
+								
+								
+								<th><center>COLLEGE</center></th>
+								
 								<th><center>PLACE SECURED</center></th>
 								<th><center>SCORE</center></th>
 								
@@ -188,32 +189,35 @@ tr:nth-child(even) {
 
 include("db_conection.php");
   $events=$_POST['events'];
+ ?><center><h2><b><?php echo "$events"; echo'<br>';?></b><h2></center><?php
   $query="select * from coordinator where events='$events'";
         $run=mysqli_query($link,$query);
         $row=mysqli_fetch_array($run);
        $events=$row[3];
         $_SESSION['events']=$events;
-	   $view_data="select part_id,events,event_type,name,usn,branch,place,score from results where events='".$_SESSION['events']."' order by score desc";//select query for viewing users.
+	   $view_data="select part_id,team_name,name,usn,branch,place,score from results where events='".$_SESSION['events']."' order by score desc";//select query for viewing users.
         $run=mysqli_query($link,$view_data);
 		 while($row=mysqli_fetch_array($run))//while look to fetch the result and store in a array $row.
         {
 			$part_id=$row[0];
-			$events=$row[1];
-			$event_type=$row[2];
-            $name=$row[3];
-            $usn=$row[4];
-			$branch=$row[5];
-			$place=$row[6];
-			$score=$row[7];
+			$team=$row[1];
+			
+			
+            $name=$row[2];
+            $usn=$row[3];
+			$branch=$row[4];
+			$place=$row[5];
+			$score=$row[6];
         ?>
 							<tr>
 							<!--here showing results in the table -->
 							    <td><?php echo $part_id;  ?></td>
-								<td><?php echo $events;  ?></td>
-								<td><?php echo $event_type;  ?></td>
-								<td><?php echo $name;  ?></td>
+								<td><?php echo $team;  ?></td>
+								
+								
+								
 								<td><?php echo $usn;  ?></td>
-								<td><?php echo $branch;  ?></td>
+								
 								<td><?php echo $place;  ?></td>
 								<td><?php echo $score;  ?></td>
 								
