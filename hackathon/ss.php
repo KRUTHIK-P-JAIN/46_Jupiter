@@ -403,7 +403,7 @@ echo "$msg7";echo'<br>';
 echo "$msg8";echo'<br>';
 echo "$msg9";
 
-mail("$msg10",'Hackathon Registration Confirmed',"$msg\n$msg2\n$msg3\n$msg10\n$msg4\n$msg5\n$msg6\n$msg7\n$msg8\n$msg9",'From: vinaybk1799@gmail.com');
+mail("$msg10",'Hackathon Registration Confirmed',"$msg\n$msg2\n$msg3\n$msg10\n$msg4\n$msg5\n$msg6\n$msg7\n$msg8\n$msg9",'From: hackathon46jupiter@gmail.com');
 }
       ?>
 	  <p></h2></div></center><br><?php
